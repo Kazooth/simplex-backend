@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, send_file
+from flask_cors import CORS
 import io
 from tejidos_lp_simplex_grafico import resolver_simplex_max, resolver_simplex_min, vertices_factibles, Z, graficar, imprimir_conclusion
 import matplotlib.pyplot as plt
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/api/optimizacion')
 def optimizacion():
